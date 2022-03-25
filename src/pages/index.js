@@ -1,5 +1,4 @@
 import * as React from "react"
-
 import Layout from "../components/Layout"
 import Hero from "../components/sections/Hero"
 import { graphql } from "gatsby"
