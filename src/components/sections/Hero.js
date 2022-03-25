@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import { StaticImage } from 'gatsby-plugin-image'
-import ContentWrapper from '../styles/contentWrapper'
+import ContentWrapper from '../../styles/contentWrapper'
 
 const StyledSection = styled.section`
   width: 100%;
@@ -65,17 +65,17 @@ const StyledContentWrapper = styled(ContentWrapper)`
 
 const Hero = ({ content }) => {
 
-  const { frontmatter, rawMarkdownBody } = content
+  const { frontmatter } = content
   return (
     <StyledSection>
       <StyledContentWrapper>
         <div className='inner-wrapper'>
-          <h1 className="section-title">{frontmatter.title}</h1>
-          <h2 className="section-subtitle">{frontmatter.subtitlePrefix}</h2>
-          <div className="text-content">{rawMarkdownBody}</div>
+          <h1 className="section-title">{frontmatter.heading}</h1>
+          <h2 className="section-subtitle">{frontmatter.heroSubTitle}</h2>
+          <div className="text-content">{frontmatter.heroText}</div>
         </div>
         <StaticImage
-          src="../images/portfolio.jpg"
+          src="../../images/portfolio.jpg"
           alt="Headshot"
           className='image' />
       </StyledContentWrapper>
