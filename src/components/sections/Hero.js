@@ -1,14 +1,15 @@
-import React from 'react'
-import styled from "styled-components"
-import { StaticImage } from 'gatsby-plugin-image'
-import ContentWrapper from '../styles/contentWrapper'
+import React from "react";
+import styled from "styled-components";
+import { StaticImage } from "gatsby-plugin-image";
+import ContentWrapper from "../../styles/contentWrapper";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
   background: #263238;
   margin-top: 4rem;
-`
+`;
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
@@ -19,16 +20,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
     @media (min-width: 786px) {
       flex-direction: row;
       justify-content: space-between;
-    } 
+    }
     .section-title {
       margin-bottom: 0.5rem;
       text-align: center;
-      color: #607D8B;
+      color: #607d8b;
     }
     .section-subtitle {
       margin-top: 0.5rem;
       text-align: center;
-      color: #607D8B;
+      color: #607d8b;
     }
     .inner-wrapper {
       display: flex;
@@ -40,7 +41,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       text-align: center;
       width: 100%;
       max-width: 31.25rem;
-      color: #607D8B;
+      color: #607d8b;
     }
     .image {
       width: 100%;
@@ -61,26 +62,28 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
+`;
 
 const Hero = ({ content }) => {
-
-  const { frontmatter, rawMarkdownBody } = content
+  const { frontmatter } = content;
   return (
     <StyledSection>
-      <StyledContentWrapper>
-        <div className='inner-wrapper'>
-          <h1 className="section-title">{frontmatter.title}</h1>
-          <h2 className="section-subtitle">{frontmatter.subtitlePrefix}</h2>
-          <div className="text-content">{rawMarkdownBody}</div>
-        </div>
-        <StaticImage
-          src="../images/portfolio.jpg"
-          alt="Headshot"
-          className='image' />
-      </StyledContentWrapper>
+      <AnimationOnScroll animateIn="animate__pulse">
+        <StyledContentWrapper>
+          <div className="inner-wrapper">
+            <h1 className="section-title">{frontmatter.heading}</h1>
+            <h2 className="section-subtitle">{frontmatter.heroSubTitle}</h2>
+            <div className="text-content">{frontmatter.heroText}</div>
+          </div>
+          <StaticImage
+            src="../../images/portfolio.jpg"
+            alt="Headshot"
+            className="image"
+          />
+        </StyledContentWrapper>
+      </AnimationOnScroll>
     </StyledSection>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

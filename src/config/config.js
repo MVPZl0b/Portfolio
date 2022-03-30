@@ -5,10 +5,10 @@ module.exports = {
     //--NAVBAR SETTINGS--//
     navLinks: {
         menu: [
-          {
+/*           {
             name: "About Me",
             url: "/#about",
-          }
+          } */
         ],
         button: {
           useFileName: false,
