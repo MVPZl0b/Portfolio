@@ -40,11 +40,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       width: 100%;
       max-width: 43.25rem;
       color: #607d8b;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-      transition: all 0.3s ease-out;
-      &:hover {
-        transform: translate3d(0px, -0.155rem, 0px);
-      }
     }
   }
 `;
