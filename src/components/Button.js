@@ -49,8 +49,8 @@ const Btn = styled('button', {
                 backgroundColor: "transparent",
                 '&:hover': {
                     color: "#fff",
-                    backgroundColor: "#009688",
-                    border: 'none'
+                    backgroundColor: '#009688',
+                    border: '1px solid #009688',
                 }
             }
         },

@@ -50,7 +50,7 @@ const Navbar = () => {
               {button ? (
                 <Link to="/" className="btn-link"><Button buttonStyle="btn--outline">Resume</Button></Link>
               ) : (
-                <Link to="/" className="btn-link"><Button buttonStyle="btn--outline" buttonColor="mobile">Resume</Button></Link>
+                <Link to="/" className="btn-link" onClick={closeMobileMenu}><Button buttonStyle="btn--outline" buttonColor="mobile">Resume</Button></Link>
               )}
             </li>
           </ul>
