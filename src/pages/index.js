@@ -7,8 +7,8 @@ import About from "../components/sections/about"
 const IndexPage = ({data}) => {
   return (  
     <Layout>
-      <Hero content={data.config.edges[0].node} />
-      <About content={data.config.edges[0].node} />
+      {/* <Hero content={data.config.edges[0].node} />
+      <About content={data.config.edges[0].node} /> */}
     </Layout>
   )
 }

@@ -1,6 +1,6 @@
 ---
-heading: "Hello, I'm Zackery!"
-heroSubTitle: "Motivated Computer Science Student"
+heading: "Hey, I'm Zackery"
+heroSubTitle: "A Jr. Software Engineer"
 heroText: "Software Engineer in the making. Based in Florida."
 aboutTitle: "About me"
 ---
