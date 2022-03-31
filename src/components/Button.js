@@ -28,7 +28,7 @@ const Btn = styled('button', {
                 '&:hover': {
                     border: 'none',
                     color: "#242424",
-                    backgroundColor: "#fff"
+                    backgroundColor: "#009688"
                 }
             },
             blue: {
@@ -41,6 +41,13 @@ const Btn = styled('button', {
                 backgroundColor: "#242424",
                 '&:hover': {
                     border: 'none',
+                    color: "#242424",
+                    backgroundColor: "#fff"
+                }
+            },
+            none: {
+                backgroundColor: "transparent",
+                '&:hover': {
                     color: "#242424",
                     backgroundColor: "#fff"
                 }
@@ -79,7 +86,7 @@ const Btn = styled('button', {
         }
     },
     defaultVariants: {
-        color: 'red',
+        color: 'none',
         size: 'medium',
     }
 })
