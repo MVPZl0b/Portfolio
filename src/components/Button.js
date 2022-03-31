@@ -45,13 +45,14 @@ const Btn = styled('button', {
                     backgroundColor: "#fff"
                 }
             },
-            none: {
+            mobile: {
                 backgroundColor: "transparent",
                 '&:hover': {
-                    color: "#242424",
-                    backgroundColor: "#fff"
+                    color: "#fff",
+                    backgroundColor: "#009688",
+                    border: 'none'
                 }
-            },
+            }
         },
         size: {
             medium: {
