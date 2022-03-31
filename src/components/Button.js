@@ -1,12 +1,14 @@
 import React from 'react'
 import { styled } from '@stitches/react';
 
+
 const Btn = styled('button', {
     padding: '8px 20px',
     borderRadius: '4px',
     outline: 'none',
     border: 'none',
     cursor: 'pointer',
+    fontFamily: 'Orbitron',
 
     '&.btn-primary': {
         backgroundColor: '#fff',

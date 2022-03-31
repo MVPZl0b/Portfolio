@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
+@font-face {
+    font-family: "Orbitron";
+    src: local("Orbitron"),
+    url("./fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
+}
 html {
     width: 100%;
     height: 100%;

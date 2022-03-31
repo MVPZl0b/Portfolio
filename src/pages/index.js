@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import Hero from "../components/sections/Hero"
 import { graphql } from "gatsby"
 import About from "../components/sections/about"
+import '../fonts/Orbitron-VariableFont_wght.ttf';
 
 const IndexPage = ({data}) => {
   return (  
