@@ -1,11 +1,68 @@
-import React from "react"
-import styled from "styled-components"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
+import { FaBars, FaTimes } from 'react-icons/fa'
+import Button from "./Button"
+import "../styles/Navbar.css"
+import { IconContext } from "react-icons/lib"
 
-import { navLinks } from "../config/config.js"
-// Navbar created by konstantin.digital.
 
-const StyledNav = styled.nav`
+
+const Navbar = () => {
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  }
+
+  useEffect(() => {
+    showButton();
+  }, []);
+
+
+  return (
+    <IconContext.Provider value={{ color: "#fff" }}>
+      <div className="navbar">
+        <div className="navbar-container container">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            {"<Portfolio>"}</Link>
+          <div className="menu-icon" onClick={handleClick}>{click ? <FaTimes /> : <FaBars />}</div>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>About</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>Projects</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>More</Link>
+            </li>
+            <li className="nav-btn">
+              {button ? (
+                <Link to="/" className="btn-link"><Button buttonStyle="btn--outline">Resume</Button></Link>
+              ) : (
+                <Link to="/" className="btn-link" onClick={closeMobileMenu}><Button buttonStyle="btn--outline" buttonColor="mobile" buttonSize="mobile">Resume</Button></Link>
+              )}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </IconContext.Provider>
+  )
+}
+
+export default Navbar
+
+
+
+/* 
   display: none;
   @media (min-width: 1200px) {
     display: flex;
@@ -52,36 +109,4 @@ const StyledNav = styled.nav`
       background: #009688;
       color: #263238;
     }
-  }
-`
-
-const Navbar = () => {
-  const { menu, button } = navLinks
-  return (
-    <StyledNav>
-      {menu.map(({ name, url }, key) => {
-        return (
-          <Link className="nav-link" key={key} to={url}>
-            {name}
-          </Link>
-        )
-      })}
-      {button.useFileName ? (
-        <a
-          className="cta-btn"
-          href={`/${button.fileName}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {button.name}
-        </a>
-      ) : (
-        <Link className="cta-btn" to={button.url}>
-          {button.name}
-        </Link>
-      )}
-    </StyledNav>
-  )
-}
-
-export default Navbar
+  } */
