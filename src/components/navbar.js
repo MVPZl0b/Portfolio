@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import styled from "styled-components"
 import { Link } from "gatsby"
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Button from "./Button"
@@ -50,7 +49,7 @@ const Navbar = () => {
               {button ? (
                 <Link to="/" className="btn-link"><Button buttonStyle="btn--outline">Resume</Button></Link>
               ) : (
-                <Link to="/" className="btn-link" onClick={closeMobileMenu}><Button buttonStyle="btn--outline" buttonColor="mobile">Resume</Button></Link>
+                <Link to="/" className="btn-link" onClick={closeMobileMenu}><Button buttonStyle="btn--outline" buttonColor="mobile" buttonSize="mobile">Resume</Button></Link>
               )}
             </li>
           </ul>
