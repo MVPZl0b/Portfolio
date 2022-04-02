@@ -26,7 +26,6 @@ const layout = ({ children }) => {
             <GlobalStyle />
             <Navbar />
             <main id="main-content">{children}</main>
-            <Footer />
         </>
     )
 }
